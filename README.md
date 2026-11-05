@@ -47,6 +47,9 @@ touching your computer is a live USB.
    power-on), choose the USB stick, then the live session. Connect to Wi-Fi from the panel.
    Nothing is installed on your laptop; everything disappears at shutdown.
 
+This stick is plain Debian. Sinux is added in step 2, inside the running live session, so after a reboot you install
+the package again (about a minute).
+
 ### 2. Install Sinux
 
 1. Download **[sinux-agent_0.2.0_amd64.deb](https://github.com/Abdourahman1909/sinux/releases/download/v0.2.0/sinux-agent_0.2.0_amd64.deb)**
