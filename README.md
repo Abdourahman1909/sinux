@@ -67,11 +67,7 @@ touching your computer is a live USB.
 
    ![Connect Muse: right-click the island, paste your key, click Connect](docs/connect.png)
 
-2. **Hold Right Ctrl**, speak, release. Muse answers out loud and shows you on the screen.
-
-   ![Talk to Muse: hold Right Ctrl, speak, release](docs/talk.png)
-
-   Try:
+2. **Hold Right Ctrl**, speak, release. Muse answers out loud and shows you on the screen. Try:
    *"How are you built into this laptop?"* · *"Show me how to make a new folder in Dolphin"* ·
    *"Turn on dark mode"* · *"Open Firefox and search for Meta Muse Spark."*
 3. Hold Right Ctrl again while Muse is talking to interrupt it. Left-click the island to type instead of speaking.
