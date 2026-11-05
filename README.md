@@ -33,22 +33,24 @@ Built for the **Meta Global AI Developer Hackathon** (November 2026).
 
 ## Run it
 
-**You need:** a laptop, a USB stick (8 GB or more), an internet connection, and a **Meta Model API key**
-([dev.meta.ai](https://dev.meta.ai)). Sinux runs on **Debian 13 with KDE Plasma 6**; the easiest way to try it without
-touching your computer is a live USB.
+You need an internet connection and a **Meta Model API key** ([dev.meta.ai](https://dev.meta.ai)). Sinux runs on
+**Debian 13 with KDE Plasma 6**. Pick your way:
 
-### 1. Make a Debian live USB (skip if you already run Debian 13 + KDE)
+| Your situation | What to do |
+| --- | --- |
+| **You already run Debian 13 + KDE** | Go to step 2. Sinux stays installed. |
+| **You want it on your laptop for good** | Install [Debian 13 with KDE](https://www.debian.org/distrib/) first, then step 2. |
+| **You just want to try it, without touching your laptop** | Step 1: a live USB that runs everything from memory. Everything is gone at shutdown, so after a reboot you repeat step 2 (about a minute). |
+
+### 1. Try it from a USB stick (optional)
 
 1. Download the **Debian 13 live image with KDE** (`debian-live-13.x.x-amd64-kde.iso`) from
    [debian.org/CD/live](https://www.debian.org/CD/live/).
-2. Write it to the USB stick with [balenaEtcher](https://etcher.balena.io/) (Windows, macOS, Linux) or
+2. Write it to a USB stick (8 GB or more) with [balenaEtcher](https://etcher.balena.io/) (Windows, macOS, Linux) or
    [Rufus](https://rufus.ie/) (Windows). This erases the stick.
 3. Restart the laptop with the stick plugged in and open the boot menu (usually **F12**, **Esc** or **F8** right after
    power-on), choose the USB stick, then the live session. Connect to Wi-Fi from the panel.
-   Nothing is installed on your laptop; everything disappears at shutdown.
-
-This stick is plain Debian. Sinux is added in step 2, inside the running live session, so after a reboot you install
-the package again (about a minute).
+   Nothing is installed on your laptop.
 
 ### 2. Install Sinux
 
