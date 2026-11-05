@@ -63,18 +63,25 @@ touching your computer is a live USB.
 
 ### 3. Talk to Muse
 
-1. Click the island → **Settings** → paste your Meta API key → **Connect**.
-2. **Hold Right Ctrl**, speak, release. Try:
+1. **Right-click the island** → **Settings** opens → paste your Meta API key → **Connect**.
+
+   ![Connect Muse: right-click the island, paste your key, click Connect](docs/connect.png)
+
+2. **Hold Right Ctrl**, speak, release. Muse answers out loud and shows you on the screen.
+
+   ![Talk to Muse: hold Right Ctrl, speak, release](docs/talk.png)
+
+   Try:
    *"How are you built into this laptop?"* · *"Show me how to make a new folder in Dolphin"* ·
    *"Turn on dark mode"* · *"Open Firefox and search for Meta Muse Spark."*
-3. Hold Right Ctrl again while Muse is talking to interrupt it. Click the island to type instead of speaking.
+3. Hold Right Ctrl again while Muse is talking to interrupt it. Left-click the island to type instead of speaking.
 
 ### If something goes wrong
 
 | Problem | Fix |
 | --- | --- |
 | Island in the middle of the screen, or missing | In Konsole: `systemctl --user restart app-org.sinux.agent@autostart.service` |
-| Island says **Muse · connect** | Settings → Connect. On Wi-Fi with a login page, open Firefox and sign in first |
+| Island says **Muse · connect** | Right-click the island → Settings → Connect. On Wi-Fi with a login page, open Firefox and sign in first |
 | Muse doesn't hear you well | System Settings → Sound → Input: pick the right microphone and raise its volume; a headset works best |
 | Nothing happens when you hold Right Ctrl | Make sure you logged out and in after `usermod`, so the `input` group applies |
 
