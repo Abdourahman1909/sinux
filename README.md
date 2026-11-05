@@ -1,10 +1,11 @@
 # Sinux
 
-**A Linux desktop with Meta's AI built into the operating system.** Its assistant, **Muse**, runs on Meta's Muse
-models and is part of the computer, not a chatbot in a window: hold **Right Ctrl** and talk, and Muse sees what you
-see, explains any app by drawing on the real screen, and gets things done across the whole desktop.
+**A Linux desktop with an AI assistant built into the operating system.** The assistant, **Muse**, is part of the
+desktop itself, not a chatbot in a window: hold **Right Ctrl** and talk, and Muse sees what you see, explains any app
+by drawing on the real screen, and gets things done across the whole desktop. Its thinking and hearing come from
+**Meta's Muse models through the Meta Model API**; everything that connects them to the desktop is Sinux's own code.
 
-Built for the **Meta Global AI Developer Hackathon** (November 2026). Demo video: _see the submission_.
+Built for the **Meta Global AI Developer Hackathon** (November 2026).
 
 ![Sinux architecture](docs/architecture.png)
 
@@ -49,7 +50,8 @@ installed system, or the official [Debian 13 KDE live image](https://www.debian.
 **Our USB stick:** for the demo we booted a Debian 13 KDE live image remastered with this package
 (`desktop/live/build.py`, `prepare-live.sh`), written by `write_usb.py` with a full read-back check, and updated
 from the stick with GPG-signed packages (`updates.py`). In that live session the laptop's own disks stay read-only.
-Rebuilding the image needs our container tooling and is included for transparency.
+Rebuilding the package or image is included for transparency: `build_agent.py` also expects the Piper voice
+`en_US-lessac-medium` and the base image's package list under `output/` (not in this repository).
 
 ## Code map
 
