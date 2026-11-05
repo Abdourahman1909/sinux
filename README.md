@@ -33,19 +33,54 @@ Built for the **Meta Global AI Developer Hackathon** (November 2026).
 
 ## Run it
 
-You need a **Meta Model API key** (dev.meta.ai) and a computer with **Debian 13 and KDE Plasma 6 (Wayland)** — an
-installed system, or the official [Debian 13 KDE live image](https://www.debian.org/CD/live/) booted from a USB stick.
+**You need:** a laptop, a USB stick (8 GB or more), an internet connection, and a **Meta Model API key**
+([dev.meta.ai](https://dev.meta.ai)). Sinux runs on **Debian 13 with KDE Plasma 6**; the easiest way to try it without
+touching your computer is a live USB.
 
-1. Download `sinux-agent_0.2.0_amd64.deb` from this repository's **Releases**.
-2. Install it (needs the internet for its dependencies):
+### 1. Make a Debian live USB (skip if you already run Debian 13 + KDE)
+
+1. Download the **Debian 13 live image with KDE** (`debian-live-13.x.x-amd64-kde.iso`) from
+   [debian.org/CD/live](https://www.debian.org/CD/live/).
+2. Write it to the USB stick with [balenaEtcher](https://etcher.balena.io/) (Windows, macOS, Linux) or
+   [Rufus](https://rufus.ie/) (Windows). This erases the stick.
+3. Restart the laptop with the stick plugged in and open the boot menu (usually **F12**, **Esc** or **F8** right after
+   power-on), choose the USB stick, then the live session. Connect to Wi-Fi from the panel.
+   Nothing is installed on your laptop; everything disappears at shutdown.
+
+### 2. Install Sinux
+
+1. Download **[sinux-agent_0.2.0_amd64.deb](https://github.com/Abdourahman1909/sinux/releases/download/v0.2.0/sinux-agent_0.2.0_amd64.deb)**
+   (126 MB) into your **Downloads** folder.
+2. Open **Konsole** (the terminal) and run:
    ```bash
+   cd ~/Downloads
    sudo apt install ./sinux-agent_0.2.0_amd64.deb
-   sudo usermod -aG input $USER     # talk key and virtual keyboard/pointer
+   sudo usermod -aG input $USER
    ```
-3. Log out and back in. The **Muse** island appears at the top of the screen.
-4. Click the island → **Settings** → paste your Meta API key → **Connect**.
-5. Hold **Right Ctrl**, speak, release. Try: *"How are you built into this laptop?"*, *"Show me how to make a new
-   folder in Dolphin"*, *"Turn on dark mode"*, *"Open Firefox and search for Meta Muse Spark."*
+   On the Debian live USB the password is **`live`**. The install downloads a few system packages, so stay online.
+3. **Log out and log back in** (on the live USB the user is `user`, password `live`). The **Muse** island appears at
+   the top of the screen and the panel moves to the bottom.
+
+### 3. Talk to Muse
+
+1. Click the island → **Settings** → paste your Meta API key → **Connect**.
+2. **Hold Right Ctrl**, speak, release. Try:
+   *"How are you built into this laptop?"* · *"Show me how to make a new folder in Dolphin"* ·
+   *"Turn on dark mode"* · *"Open Firefox and search for Meta Muse Spark."*
+3. Hold Right Ctrl again while Muse is talking to interrupt it. Click the island to type instead of speaking.
+
+### If something goes wrong
+
+| Problem | Fix |
+| --- | --- |
+| Island in the middle of the screen, or missing | In Konsole: `systemctl --user restart app-org.sinux.agent@autostart.service` |
+| Island says **Muse · connect** | Settings → Connect. On Wi-Fi with a login page, open Firefox and sign in first |
+| Muse doesn't hear you well | System Settings → Sound → Input: pick the right microphone and raise its volume; a headset works best |
+| Nothing happens when you hold Right Ctrl | Make sure you logged out and in after `usermod`, so the `input` group applies |
+
+**Tested:** our USB stick on a real laptop (Debian 13 live + this package, 4 November 2026) and the package on a
+Debian 13 / Plasma 6.3 virtual machine. The manual route above uses the same steps; other distributions are not
+supported yet.
 
 **Our USB stick:** for the demo we booted a Debian 13 KDE live image remastered with this package
 (`desktop/live/build.py`, `prepare-live.sh`), written by `write_usb.py` with a full read-back check, and updated
